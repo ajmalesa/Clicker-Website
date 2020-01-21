@@ -2,8 +2,34 @@
 <html>
 <head>
 	<title>Clicker</title>
+	<link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-	<button id="attack">1</button>
+	<div id="points"></div>
+	<br>
+	<div id="wrapper">
+		<button id="attack">1</button>
+	</div>
 </body>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script type="text/javascript">
+
+		var points = 0;
+
+		$("#points").html("Points: " + points);
+
+		$("#attack").click(function() {
+			points = points + 1;
+			$("#points").html("Points: " + points);
+		});
+
+		
+
+	</script>
+
+
+
 </html>

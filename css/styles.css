@@ -1,0 +1,16 @@
+button {
+  width: 20%; 
+  height: 200px;
+  font-size: 25px;
+}
+
+#wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#points {
+  font-size: 25px;
+  text-align: center;
+}
