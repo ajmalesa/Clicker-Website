@@ -9,7 +9,15 @@
 	<div id="points"></div>
 	<br>
 	<div id="wrapper">
-		<button id="attack">1</button>
+		<button id="attack1">1</button>
+		<button hidden="true" id="attack2">2</button>
+		<button hidden="true" id="attack4">4</button>
+		<button hidden="true" id="attack8">8</button>
+		<button hidden="true" id="attack16">16</button>
+		<button hidden="true" id="attack32">32</button>
+	</div>
+	<div id="wrapper">
+		<button id="upgrade">bigger number costs 100</button>
 	</div>
 </body>
 
@@ -17,19 +25,67 @@
 
 	<script type="text/javascript">
 
-		var points = 0;
+		var points = 500;
 
-		$("#points").html("Points: " + points);
+		$("#points").html("points: " + points);
 
-		$("#attack").click(function() {
+		$("#attack1").click(function() {
 			points = points + 1;
-			$("#points").html("Points: " + points);
+			$("#points").html("points: " + points);
+		});
+		$("#attack2").click(function() {
+			points = points + 2;
+			$("#points").html("points: " + points);
+		});		
+		$("#attack4").click(function() {
+			points = points + 4;
+			$("#points").html("points: " + points);
+		});	
+		$("#attack8").click(function() {
+			points = points + 8;
+			$("#points").html("points: " + points);
+		});	
+		$("#attack16").click(function() {
+			points = points + 16;
+			$("#points").html("points: " + points);
+		});
+		$("#attack32").click(function() {
+			points = points + 32;
+			$("#points").html("points: " + points);
 		});
 
-		
+		$("#upgrade").click(function() {
+			if (points >= 100) {
+				if ($("#attack2").prop("hidden") == true) {
+					$("#attack2").attr("hidden", false);
+					points -= 100;
+					$("#points").html("points: " + points);
+				}
+				else if ($("#attack4").prop("hidden") == true) {
+					$("#attack4").attr("hidden", false);
+					points -= 100;
+					$("#points").html("points: " + points);
+				}
+				else if ($("#attack8").prop("hidden") == true) {
+					$("#attack8").attr("hidden", false);
+					points -= 100;
+					$("#points").html("points: " + points);
+				}
+				else if ($("#attack16").prop("hidden") == true) {
+					$("#attack16").attr("hidden", false);
+					points -= 100;
+					$("#points").html("points: " + points);
+				}
+				else if ($("#attack32").prop("hidden") == true) {
+					$("#attack32").attr("hidden", false);
+					points -= 100;
+					$("#points").html("points: " + points);
+				}
+			}
+		});	
+
+
 
 	</script>
-
-
 
 </html>
