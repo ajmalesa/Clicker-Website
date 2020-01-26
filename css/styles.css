@@ -14,7 +14,7 @@ button:hover {
 	background-color: #6a6a95;
 }
 
-#wrapper {
+.wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
