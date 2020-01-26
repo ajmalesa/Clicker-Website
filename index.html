@@ -29,7 +29,9 @@
 
 	<script type="text/javascript">
 
-		var points = 500;
+		$("#upgrade").css("opacity", .5);
+
+		var points = 0;
 
 		$("#points").html("points: " + points);
 
@@ -56,6 +58,17 @@
 		$("#attack32").click(function() {
 			points = points + 32;
 			$("#points").html("points: " + points);
+		});
+
+		$(window).on( "click", function() {
+
+  			if (points >= 100) {
+  				$("#upgrade").css("opacity", 1)
+  			} else
+  			{
+ 				$("#upgrade").css("opacity", .5)
+  			}
+
 		});
 
 		$("#upgrade").click(function() {
@@ -87,7 +100,6 @@
 				}
 			}
 		});	
-
 
 
 	</script>
