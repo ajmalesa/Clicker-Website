@@ -1,1 +1,1 @@
-#projects
+Simple clicker game.
