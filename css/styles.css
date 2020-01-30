@@ -20,9 +20,10 @@ button:hover {
   justify-content: center;
 }
 
-#points {
+#points, #autoDisplay {
   font-size: 25px;
   text-align: center;
+  margin: 20px;
 }
 
 body {
