@@ -4,6 +4,7 @@ $("#autoUpgrade").css("opacity", .5);
 var points = 0;
 var autoRate = 0;
 var upgradeCost = 20;
+var autoUpgradeCost = 10;
 
 $("#points").html("points: " + points);
 
@@ -73,10 +74,11 @@ $("#upgrade").click(function() {
 });	
 
 $("#autoUpgrade").click(function() {
-	if (points>= 10) {
+	if (points>= autoUpgradeCost) {
 		autoRate += 1;
-		points -= 10;
+		points -= autoUpgradeCost;
 		$("#autoDisplay").html("auto rate: " + autoRate + "/s");
+		autoUpgradeCost = Math.round(autoUpgradeCost + (autoUpgradeCost * .5));
 	}
 });
 
@@ -104,4 +106,6 @@ setInterval	(function() {
 	} else {
 		$("#upgrade").html("bigger number costs " + upgradeCost);	
 	}
+
+	$("#autoUpgrade").html("auto +1 costs " + autoUpgradeCost);
 }, 62.5);
