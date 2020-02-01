@@ -6,6 +6,16 @@ var autoRate = 0;
 var upgradeCost = 20;
 var autoUpgradeCost = 10;
 
+if(localStorage.getItem('pointsSaved')) {
+	points = parseInt(localStorage.getItem('pointsSaved'), 10);
+}
+if(localStorage.getItem('rateSaved')) {
+	autoRate = parseInt(localStorage.getItem('rateSaved'), 10);	
+} 
+if(localStorage.getItem('upgradeCostSaved')) {
+	upgradeCost = parseInt(localStorage.getItem('upgradeCostSaved'), 10);	
+} 
+
 $("#points").html("points: " + points);
 
 $("#attack1").click(function() {
@@ -41,33 +51,7 @@ $("#attack512").click(function() {
 
 $("#upgrade").click(function() {
 	if (points >= upgradeCost && upgradeCost < 10240) {
-		if ($("#attack2").prop("hidden") == true) {
-			$("#attack2").attr("hidden", false);
-		}
-		else if ($("#attack4").prop("hidden") == true) {
-			$("#attack4").attr("hidden", false);
-		}
-		else if ($("#attack8").prop("hidden") == true) {
-			$("#attack8").attr("hidden", false);
-		}
-		else if ($("#attack16").prop("hidden") == true) {
-			$("#attack16").attr("hidden", false);
-		}
-		else if ($("#attack32").prop("hidden") == true) {
-			$("#attack32").attr("hidden", false);
-		}
-		else if ($("#attack64").prop("hidden") == true) {
-			$("#attack64").attr("hidden", false);
-		}
-		else if ($("#attack128").prop("hidden") == true) {
-			$("#attack128").attr("hidden", false);
-		}
-		else if ($("#attack256").prop("hidden") == true) {
-			$("#attack256").attr("hidden", false);
-		}
-		else if ($("#attack512").prop("hidden") == true) {
-			$("#attack512").attr("hidden", false);
-		} 
+		
 		points -= upgradeCost;
 		upgradeCost *= 2;
 	}
@@ -77,7 +61,6 @@ $("#autoUpgrade").click(function() {
 	if (points>= autoUpgradeCost) {
 		autoRate += 1;
 		points -= autoUpgradeCost;
-		$("#autoDisplay").html("auto rate: " + autoRate + "/s");
 		autoUpgradeCost = Math.round(autoUpgradeCost + (autoUpgradeCost * .5));
 	}
 });
@@ -108,4 +91,45 @@ setInterval	(function() {
 	}
 
 	$("#autoUpgrade").html("auto +1 costs " + autoUpgradeCost);
+
+	if(autoRate >= 1) {
+		$("#autoDisplay").html("auto rate: " + autoRate + "/s");
+	}
+
+	if (upgradeCost >= 40) {
+		$("#attack2").attr("hidden", false);
+		}
+	if (upgradeCost >= 80) {
+		$("#attack4").attr("hidden", false);
+		}
+	if (upgradeCost >= 160) {
+		$("#attack8").attr("hidden", false);
+		}
+	if (upgradeCost >= 320) {
+		$("#attack16").attr("hidden", false);
+		}
+	if (upgradeCost >= 640) {
+		$("#attack32").attr("hidden", false);
+		}
+	if (upgradeCost >= 1280) {
+		$("#attack64").attr("hidden", false);
+		}
+	if (upgradeCost >= 2560) {
+		$("#attack128").attr("hidden", false);
+		}
+	if (upgradeCost >= 5120) {
+		$("#attack256").attr("hidden", false);
+		}
+	if (upgradeCost >= 10240) {
+		$("#attack512").attr("hidden", false);
+		} 
 }, 62.5);
+
+setInterval (function() {
+
+	localStorage.setItem('pointsSaved', Math.round(points));
+	localStorage.setItem('rateSaved', Math.round(autoRate));
+	localStorage.setItem('upgradeCostSaved', Math.round(upgradeCost));
+
+
+}, 5000)
