@@ -10,9 +10,7 @@ button {
   transition: .5s;
 }
 
-button:hover {
-	background-color: #6a6a95;
-}
+button:hover {background-color: #6a6a95;}
 
 .wrapper {
   display: flex;
