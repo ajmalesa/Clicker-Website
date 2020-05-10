@@ -20,6 +20,7 @@ if(localStorage.getItem('upgradeCostSaved')) {
 if(localStorage.getItem('autoUpgradeCostSaved')) {
 	autoUpgradeCost = parseInt(localStorage.getItem('autoUpgradeCostSaved'), 10);
 }
+
 // Add points based on which button is pressed
 $("#attack1").click(function() {
 	points = points + 1;
