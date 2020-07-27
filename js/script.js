@@ -24,11 +24,6 @@ if(localStorage.getItem('autoUpgradeCostSaved')) {
 // Add points based on which button is pressed
 $("#attack1").click(function() {
 	points = points + 1;
-	document.getElementById("attack1").src = "image/akmal-head.png";
-	var audio = new Audio('sound/akmal-loves-yelling.mp3');
-	audio.play();
-	setTimeout(() => { document.getElementById("attack1").src = "image/aarian-head.png"; }, 3000);
-	
 });
 $("#attack2").click(function() {
 	points = points + 2;
