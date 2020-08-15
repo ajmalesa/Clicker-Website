@@ -10,12 +10,24 @@ button {
   transition: .5s;
 }
 
+
+
 button:hover {background-color: #6a6a95;}
 
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+  
+}
+
+@media (max-width: 768px) {
+  button {
+    width: 100%!important;
+  }
+  .wrapper {
+    flex-wrap: wrap;
+  }
 }
 
 #points, #autoDisplay {
