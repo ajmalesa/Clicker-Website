@@ -21,6 +21,7 @@ button:hover {background-color: #6a6a95;}
 @media (max-width: 900px) {
   button {
     width: 100%!important;
+    margin: 10px;
   }
   .wrapper {
     flex-wrap: wrap;
