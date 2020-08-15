@@ -10,23 +10,29 @@ button {
   transition: .5s;
 }
 
-
-
 button:hover {background-color: #6a6a95;}
 
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   button {
     width: 100%!important;
   }
   .wrapper {
     flex-wrap: wrap;
+  }
+  .pointsCounter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    background-color: black;
+    top: 0;
+    left: 0;
   }
 }
 
